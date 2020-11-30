@@ -22,7 +22,7 @@ namespace DownloadPage
         object block2 = new object();
         int countDownImg = 0;
         string jsonString = "";
-        int timeWait = 1000;
+        int timeWait = 60000;
         public WebManager()
         {
             client = new WebClient();
