@@ -13,7 +13,7 @@ namespace DownloadPage
         }
         static public void WriteLog(object str)
         {
-            File.WriteAllText("log.txt", DateTime.Now+" "+str.ToString()+"\n");
+            File.AppendAllText("log.txt", DateTime.Now+" "+str.ToString()+"\n");
         }
     }
 }

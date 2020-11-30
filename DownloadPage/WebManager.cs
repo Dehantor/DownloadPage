@@ -88,7 +88,8 @@ namespace DownloadPage
                 {
                     k++;
                     Match m = item as Match;
-                    imgUrl.Add(m.Value);
+                    if(!imgUrl.Contains(m.Value))
+                         imgUrl.Add(m.Value);
                     //ограничение на количество загружаемых файлов
                     if (k >= imageCount)
                         return;
@@ -287,7 +288,7 @@ namespace DownloadPage
                 {
                     tasks[i].Start();
                 }
-                Task.WaitAll(tasks, 1000);
+                Task.WaitAll(tasks, timeWait);
                 createJson();
             }
             catch
